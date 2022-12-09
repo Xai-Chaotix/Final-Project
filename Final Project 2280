@@ -1,0 +1,782 @@
+'''My python code for the final CS 2280 project.
+Author: Xavier Ijewere <xaijewere@gmail.com>'''
+
+import math
+import turtle
+import sys
+
+
+def adventure_game():
+    '''Starts the plot. Beginning the game'''
+    answer= input('Would you like to begin the adventure?(Yes/No)')
+    if answer.lower()=='yes':
+        answer= input('Are you sure you want to begin the adventure?(Yes/No)')
+        if answer.lower()=='yes':
+            answer= input("Are you sure that you're sure that you want to begin the adventure?(Yes/No)")
+            if answer.lower()=='yes':
+                print()
+                print("Okay, let's begin")
+                print()
+                start=True
+            else:
+                adventure_game()
+        else:
+            print("You don't seem to be ready yet")
+            print("Too bad, let's begin")
+            print()
+        
+    else:
+        print("You don't seem to be ready yet")
+        print("Too bad, let's begin")
+        print()
+
+      
+adventure_game()#The game begins once the code is run.
+
+
+def enter_room_three():
+    '''All that happens in room 3'''
+    options = ["run","fight","pray"]
+    print('ENTER--ROOM 3')
+    print('The door behind you vanishes')
+    print("You are in room 3, and there is a skeleton.")
+    print('The skeleton is holding an axe')
+    print('The skeleton rushes towards you, what do you do?')
+    print()
+    user_input = ""
+    while user_input not in options:
+        print("Options: run/fight/pray")
+        user_input = input()
+        if user_input == "run":
+            print('There were no doors to run to')
+            print('The skeleton chases you around the room')
+            print('You become too tired and stop to catch your breath')
+            print('The skeleton reaches you and slices your head off')
+            print()
+            print()
+            print('You have passed')
+            print()
+            print('---Game Over---')
+            sys.exit()
+        elif user_input == "fight":
+            print('You stand on your toes ready for the encounter')
+            print('You realize that you have no weapons, so you raise your arms in a boxing stance')
+            print('The skeleton rushes at you, you throw a right hook to his face')
+            print("The bones in your fist have shattered and there is blood on the skeleton's face, your blood")
+            print('The skeleton is unfazed and slashes your right arm off, then your left arm before walking to the other corner of the room')
+            print('You scream out in pain as both of your arms lie beside you.')
+            print('Your vision becomes blurry and you faint')
+            print()
+            print()
+            print('You died of blood loss')
+            print()
+            print('---Game Over---')
+            sys.exit()
+        elif user_input == "pray":
+            print('You drop to your knees and begin to pray')
+            print('The skeleton laughs as he walks closer to you')
+            print('The skeleton slices you clean in half with his axe')
+            print()
+            print()
+            print('You were slain')
+            print()
+            print('---Game Over---')
+            sys.exit()
+        else: 
+            print("Invalid option, Please enter a valid option.")
+
+
+def enter_room_five():
+    '''All that happens in room 5'''
+    options = ["run","fight","play dead"]
+    print('ENTER--ROOM 5')
+    print('The door behind you vanishes')
+    print("You are in room 5, and you hear a loud roar.")
+    print('You turn around to a salivating lion')
+    print('The lion circles you getting ready to pounce, what do you do?')
+    print()
+    user_input = ""
+    while user_input not in options:
+        print("Options: run/fight/play dead")
+        user_input = input()
+        if user_input == "run":
+            print('There were no doors to run to')
+            print('The lion catches you instantly ')
+            print('The lion rips your flesh from your bone and licks the bone clean')
+            print()
+            print()
+            print('You have been consumed')
+            print()
+            print('---Game Over---')
+            sys.exit()
+        elif user_input == "fight":
+            print('The lion lunges at you, teeth bared')
+            print('You are too slow to dodge so it catches your arms in its teeth and bites down slowly')
+            print('You scream from the excruciating pain and the lion is dazed from the deafening sound and lets go of your arm')
+            print("You jump onto it back and fling your bloody arm under its neck, catching it with your other arm")
+            print('You proceed to choke out the lion')
+            print('You are successful in choking out the lion, but the bite wound on your arm is too deep.')
+            print('Your vision becomes blurry and you faint')
+            print()
+            print()
+            print('You died of blood loss')
+            print()
+            print('---Game Over---')
+            sys.exit()
+        elif user_input == "play dead":
+            print('You drop to the floor and play dead')
+            print('The lion is confused and assumes you have died of fear')
+            print('The lion slowly walks up to you checking if you are alive')
+            print('The lion now thinks you are dead and walks right in front of you to have one last look')
+            print('You see an opportunity to strike and you sink both your hands straight into the eyes of the lion, blinding it')
+            print('The lion roars in pain, lunges forward and bites your neck')
+            print('All you see is the inside of the head of the lion before he shakes his head till your neck rips off your body')
+            print()
+            print()
+            print('You were killed')
+            print()
+            print('---Game Over---')
+            sys.exit()
+        else: 
+            print("Invalid option, Please enter a valid option.")
+
+
+def enter_room_twelve():
+    '''All that happens in room 12'''
+    options = ["trapdoor","door","attic"]
+    print('ENTER--ROOM 12')
+    print('The door behind you vanishes')
+    print("There is a trapdoor in the corner of the room,")
+    print("There is a door across from you and,")
+    print('There is an attic hatch')
+    print('Which do you choose?')
+    print()
+    user_input = ""
+    while user_input not in options:
+        print("Options: trapdoor/door/attic")
+        user_input = input()
+        if user_input == "trapdoor":
+            print('You walk up to the trapdoor in the corner of the room')
+            print('You open it and drop through it')
+            print('You fell into a large tank of water ')
+            print('The trapdoor shuts and the water fills the tank to the brim')
+            print()
+            print()
+            print('You have drowned')
+            print()
+            print('---Game Over---')
+            sys.exit()
+        elif user_input == "door":
+            print('You open the door and are greeted with the light of the outside')
+            print('Congratulations, You are now a Dungeon Conqueror')
+            print('You have escaped from the dungeon')
+            print('From today, you shall be known as, '+name+', The Chaos Conqueror')
+            print('------GG------')
+            sys.exit()
+        elif user_input == "attic":
+            print('You climb into the attic')
+            print('It is pitch black and you feel something crawling up behind you')
+            print('You feel that you are placed in a chokehold')
+            print('You tap out but to no avail')
+            print('You struggle but to no avail')
+            print('You feel a hand on your chin and a hand on your neck behind the ear')
+            print('You feel both hands pull in opposite directions')
+            print()
+            print()
+            print('Your neck snapped')
+            print()
+            print('---Game Over---')
+            sys.exit()
+        else: 
+            print("Invalid option, Please enter a valid option.")
+
+
+def enter_room_eleven():
+    '''All that happens in room 11'''
+    options = ["run","stay","backtrack"]
+    print('ENTER--ROOM 11')
+    print("You are in room 11, and there is an eerie silence in the room.")
+    print('There is a door at the other side')
+    print('The wall behind you starts moving toward the wall across from you')
+    print('What do you do?')
+    print()
+    user_input = ""
+    while user_input not in options:
+        print("Options: run/stay/backtrack")
+        user_input = input()
+        if user_input == "run":
+            print('The wall start moving faster as you run towards the opposite door')
+            print('You go through the door')
+            print('The wall closes on the opposite one closing off the room behind you')
+            print()
+            enter_room_twelve()
+        elif user_input == "stay":
+            print('The wall pushes you')
+            print('You are pushed through the door')
+            print('The wall closes on the opposite one closing off the room behind you')
+            print()
+            enter_room_twelve()
+        elif user_input == "backtrack":
+            print('You go through the door behind you')
+            enter_room_eleven()
+        else: 
+            print("Invalid option, Please enter a valid option.")
+
+
+def enter_room_seven():
+    '''All that happens in room 7'''
+    options = ["play dead","fight","???"]
+    print('ENTER--ROOM 7')
+    print('The door behind you vanishes')
+    print("You are in room 7, and there is a yellowish brown bear in the corner.")
+    print('You quietly sit down to think of what to do')
+    print('You realize that you have a jar of honey in your pocket')
+    print('What do you do?')
+    print()
+    user_input = ""
+    while user_input not in options:
+        print("Options: play dead/fight/???")
+        user_input = input()
+        if user_input == "play dead":
+            print('The bear raises his head up and starts agressively sniffing the air')
+            print('It walks up to you ')
+            print('It circles you pushing you slightly')
+            print('After a few minutes, it leaves you alone and walks back to the corner of the room')
+            print()
+            print()
+            print('You became too confortable lying down and fell asleep')
+            print()
+            print('When you regain consciousness, you notice the bear is missing and there is a door in front of you')
+            print('You walk through the door')
+            print()
+            print()
+            enter_room_eleven()
+        elif user_input == "fight":
+            print('You rush towards the bear')
+            print('You are able to catch it off guard')
+            print('You grab its neck in an attempt to choke it out')
+            print("It tries to grab you but to no avail")
+            print('But, it is able to dig its claws into your back')
+            print("Out of pain, you release your grip on its neck and the bear's claws dig deep into your shoulders")
+            print('It throws you off its back and into the wall')
+            print('It chases after you and starts tearing you up with its claws')
+            print()
+            print()
+            print('You were torn to pieces')
+            print()
+            print('---Game Over---')
+            sys.exit()
+        elif user_input == "???":
+            print('You bring out the honey from your pocket and open it to have a taste')
+            print('The bear catches a whiff of the honey and bounds over to you')
+            print('Out of fear, you close your eyes')
+            print('It reaches you and starts sniffing you to find where the smell is coming from')
+            print('It looks you in the eyes and lets out a pitiful cry')
+            print('This catches you off-guard and you open your eyes')
+            print('Your vision is met by a yellow bear with a red shirt')
+            print('It clicks who you are looking at and you hold out the honey')
+            print('It collects the honey and gives you a hug, before walking away happily with the honey')
+            print('It turns around and beckons on you to follow it')
+            print('It leads you to a door and you walk through it')
+            print()
+            print()
+            print('You open the door and are greeted with the light of the outside')
+            print('Congratulations, You are now a Dungeon Conqueror')
+            print('You have escaped from the dungeon')
+            print('From today, you shall be known as, '+name+', The Chaos Conqueror')
+            print('------GG------')
+            sys.exit()
+        else: 
+            print("You chose to do nothing.")
+            print('The bear jumps at you and you faint from the jumpscare')
+            print()
+            print()
+            print('It was all a dream')
+            print()
+            print()
+            print()
+            print()
+            break
+
+
+def enter_room_nine():
+    '''All that happens in room 9'''
+    options = ["remain still","fight","???"]
+    print('ENTER--ROOM 9')
+    print('The door behind you vanishes')
+    print("You are in room 9, and across from you is a greater kudu.")
+    print('It hears your steps and it immediately starts rushing at you at 60mph')
+    print('What do you do?')
+    print()
+    user_input = ""
+    while user_input not in options:
+        print("Options: remain still/fight/???")
+        user_input = input()
+        if user_input == "remain still":
+            print('The greater kudu rushes at you with its horn directly pointed at you')
+            print('You stay still in hopes that it leaves you alone ')
+            print('Right before it impaled you with its horns, out of fear, you jumped out of the way ')
+            print('The sound of a large thud sends a shiver down your spine')
+            print('You look to your left and your eyes are met with the bloody corpse of the greater kudu')
+            print('You look around the corpse, and come to the conclusion that its horns hit the wall so hard that it shattered its skull')
+            print()
+            print()
+            print('A door opens in the wall ahead of you')
+            print('You walk through the door')
+            print()
+            print()
+            enter_room_eleven()
+        elif user_input == "fight":
+            print('The greater kudu rushes at you with its horn directly pointed at you')
+            print("You wait till it is a hair's breath away from you")
+            print('You grab its horns and drag it towards the ground')
+            print("Its neck cant handle the abrupt stop at its speed")
+            print('Its neck snapped')
+            print()
+            print()
+            print('A door opens in the wall ahead of you')
+            print('You walk through the door')
+            print()
+            enter_room_eleven()
+        elif user_input == "???":
+            print('You drop closer to the ground as it reaches you')
+            print('You reached your arm to its throat and clasp your arm on its oesophagus')
+            print('You pull extremely hard and tear its oesophagus out of its neck')
+            print('The blood spashes all over you')
+            print('The kudu struggles to breathe for a few minutes before it dies')
+            print()
+            print()
+            print('A door opens in the wall ahead of you')
+            print('You walk through the door')
+            enter_room_eleven()
+        else: 
+            print("Invalid option, Please enter a valid option.")
+
+
+
+def enter_room_six():
+    '''All that happens in room 6'''
+    options = ["1","3","idk"]
+    print('ENTER--ROOM 6')
+    print("You are in room 6, and there is a single door ahead of you.")
+    print('The door behind you vanishes')
+    print('There is 1 door with writing on it')
+    print('It reads, to go further, you must solve one of the arithmetic problem')
+    print('The question is as follows:')
+    print()
+    print('(7-24/8*4+6)')
+    print()
+    print('(2//2)')
+    print()
+    print('(3%4)')
+    a=(7-24/8*4+6)
+    user_input = ""
+    while user_input not in options:
+        print("Options: ...(in integer form,not words) ")
+        print("If you didn't notice already, there are no options")
+        user_input = input()
+        if user_input == ((3%4)):
+            print()
+            print('A door appeared with the number 7 on it')
+            enter_room_seven()
+        elif user_input == '1':
+            print()
+            print('A door appeared with the number 9 on it')
+            enter_room_nine()
+        elif user_input == a:
+            print()
+            print('A door appeared with the number 9 on it')
+            enter_room_nine()
+        elif user_input == '3':
+            print()
+            print('A door appeared with the number 7 on it')
+            enter_room_seven()
+        elif user_input == "idk":
+            print('OK, then...')
+            print('The room is filled with sleeping gas')
+            print('You have fallen asleep')
+            print()
+            enter_room_six()
+        else: 
+            print("Incorrect answer.")
+            print('A paper and pen appear from the crack under the dooor')
+            print('You pick up the paper and pen and start solving the equation')
+            print()
+            print('Right as you reached the answer, the floor disappeared from under your feet')
+            print('You fell into a spike trap')
+            print()
+            print()
+            print('You were impaled')
+            print()
+            print('---Game Over---')
+            print()
+            print()
+            print()
+            print()
+            print()
+            sys.exit()
+
+
+def enter_room_eight():
+    '''All that happens in room 8'''
+    options = ["run","wait","???"]
+    print('ENTER--ROOM 8')
+    print('The door behind you vanishes')
+    print("There is a clock on the wall ahead and the time is 11:55")
+    print("There is also a door across from you ")
+    print('Every time the clock moves, the room is filled with kerosene')
+    print('What do you do?')
+    print()
+    user_input = ""
+    while user_input not in options:
+        print("Options: run/wait/???")
+        user_input = input()
+        if user_input == "run":
+            print('You ran to the door')
+            print('You open the door and are greeted with the light of the outside')
+            print('Congratulations, You are now a Dungeon Conqueror')
+            print('You have escaped from the dungeon')
+            print('From today, you shall be known as, '+name+', The Chaos Conqueror')
+            print('------GG------')
+            sys.exit()
+        elif user_input == "wait":
+            print('You waited')
+            print('The clock struck twelve')
+            print('The room filled up with kerosene')
+            print('The clock fell and the scratch with the floor created sparks')
+            print('The sparks made contact with the kerosene')
+            print()
+            print()
+            print('You were burned alive')
+            print()
+            print('---Game Over---')
+            sys.exit()
+        elif user_input == "???":
+            print('You ran to the clock and set the time back')
+            print('Nothing happens and you take a nap')
+            print('You wake up to the feeling of being immersed in liquid')
+            print('The room fills up with kerosene')
+            print('You struggle to swim to the top')
+            print('You gasp for air and mistakenly swallowed up the kerosene')
+            print()
+            print()
+            print('You choked on kerosene')
+            print()
+            print('---Game Over---')
+            sys.exit()
+        else: 
+            print("Invalid option, Please enter a valid option.")
+
+
+def enter_room_nine():
+    '''All that happens in room 9'''
+    options = ["remain still","fight","???"]
+    print('ENTER--ROOM 9')
+    print('The door behind you vanishes')
+    print("You are in room 9, and across from you is a greater kudu.")
+    print('It hears your steps and it immediately starts rushing at you at 60mph')
+    print('What do you do?')
+    print()
+    user_input = ""
+    while user_input not in options:
+        print("Options: remain still/fight/???")
+        user_input = input()
+        if user_input == "remain still":
+            print('The greater kudu rushes at you with its horn directly pointed at you')
+            print('You stay still in hopes that it leaves you alone ')
+            print('Right before it impaled you with its horns, out of fear, you jumped out of the way ')
+            print('The sound of a large thud sends a shiver down your spine')
+            print('You look to your left and your eyes are met with the bloody corpse of the greater kudu')
+            print('You look around the corpse, and come to the conclusion that its horns hit the wall so hard that it shattered its skull')
+            print()
+            print()
+            print('A door opens in the wall ahead of you')
+            print('You walk through the door')
+            print()
+            print()
+            enter_room_eleven()
+        elif user_input == "fight":
+            print('The greater kudu rushes at you with its horn directly pointed at you')
+            print("You wait till it is a hair's breath away from you")
+            print('You grab its horns and drag it towards the ground')
+            print("Its neck cant handle the abrupt stop at its speed")
+            print('Its neck snapped')
+            print()
+            print()
+            print('A door opens in the wall ahead of you')
+            print('You walk through the door')
+            print()
+            enter_room_eleven()
+        elif user_input == "???":
+            print('You drop closer to the ground as it reaches you')
+            print('You reached your arm to its throat and clasp your arm on its oesophagus')
+            print('You pull extremely hard and tear its oesophagus out of its neck')
+            print('The blood spashes all over you')
+            print('The kudu struggles to breathe for a few minutes before it dies')
+            print()
+            print()
+            print('A door opens in the wall ahead of you')
+            print('You walk through the door')
+            enter_room_eleven()
+        else: 
+            print("Invalid option, Please enter a valid option.")
+
+
+def enter_room_thirteen():
+    '''All that happens in room 13'''
+    options = ["scurry","run","???"]
+    print('ENTER--ROOM 13')
+    print('The door behind you vanishes')
+    print("The room is ablaze")
+    print('What do you do?')
+    print()
+    user_input = ""
+    while user_input not in options:
+        print("Options: scurry/run/???")
+        user_input = input()
+        if user_input == "scurry":
+            print('You drop to the floor and crawl around')
+            print('While scurrying around you notice a trapdoor')
+            print('You drop theough the trapdoor and are greeted with the light of the outside')
+            print('Congratulations, You are now a Dungeon Conqueror')
+            print('You have escaped from the dungeon')
+            print('From today, you shall be known as, '+name+', The Chaos Conqueror')
+            print('------GG------')
+            sys.exit()
+        elif user_input == "run":
+            print('You run around the room looking for an escape')
+            print('The heat gets to you and you lie down in fatigue')
+            print('You notice a trapdoor in the distance and run towards it')
+            print('You could not reach it in time')
+            print()
+            print()
+            print('You choked on the smoke')
+            print()
+            print('---Game Over---')
+            sys.exit()
+        elif user_input == "???":
+            print('You have a good idea')
+            print('You urinate on the flame')
+            print('The flame gets hotter ')
+            print('You take off your shirt and fan the flame')
+            print('The flame is pushed away and comes back hotter')
+            print()
+            print()
+            print('You are consumed by the flames')
+            print()
+            print('---Game Over---')
+            sys.exit()
+        else: 
+            print("Invalid option, Please enter a valid option.")
+
+
+def enter_room_sixteen():
+    '''All that happens in room 16'''
+    options = ["door","escape","???"]
+    print('ENTER--ROOM 16')
+    print('The door behind you vanishes')
+    print("There is a door ahead of you")
+    print('What do you do?')
+    print()
+    user_input = ""
+    while user_input not in options:
+        print("Option: door")
+        user_input = input()
+        if user_input == "door":
+            print('You run through the last door')
+            print('You are greeted with a white light')
+            print('You run out the door and fall straight down')
+            print()
+            print()
+            print('You fell to your death')
+            print()
+            print('---Game Over---')
+            sys.exit()
+        else: 
+            print("Invalid option, Please enter a valid option.")
+
+
+
+def enter_room_fourteen():
+    '''All that happens in room 14'''
+    options = ["left","right","forward","backward"]
+    print('ENTER--ROOM 14')
+    print('The door behind you vanishes')
+    print()
+    print('-----To your left is the door to room ???-----')
+    print()
+    print('-----To your right is the door to room ???-----')
+    print()
+    print('-----Ahead of you is the door to room ???-----')
+    print()
+    print('Which direction do you follow?')
+    print()
+    user_input = ""
+    while user_input not in options:    
+        print("Options: left/right/forward")
+        user_input = input()
+        if user_input == "left":
+            enter_room_thirteen()
+        elif user_input == "right":
+            enter_room_sixteen()
+        elif user_input == "forward":
+            print('Nothing happens...')
+            print('Nothing happens and you take a nap')
+            print('You wake up to the roof coming closer')
+            print('The roof drops')
+            print()
+            print()
+            print('You were crushed')
+            print()
+            print('---Game Over---')
+            sys.exit()
+        elif user_input == "backward":
+            print("There is no door behind you")
+            print('What do you do')
+            options2=['choose another door','push']
+            user_input2 = ""
+            while user_input2 not in options2:
+                print("Options: choose another door/push")
+                user_input2 = input()
+                if user_input == "choose another door":
+                    enter_room_fourteen()
+                elif user_input == "push":
+                    print('Nothing happens...')
+                    print('Nothing happens and you take a nap')
+                    print('You wake up to the roof coming closer')
+                    print('The roof drops')
+                    print()
+                    print()
+                    print('You were crushed')
+                    print()
+                    print('---Game Over---')
+                    sys.exit()
+                else:
+                    enter_room_fourteen()             
+        else: 
+            print("Invalid option, Please enter a valid option.")
+
+
+
+def enter_room_ten():
+    '''All that happens in room 10'''
+    directions = ["left","right","forward"]
+    print('ENTER--ROOM 10')
+    print("You are in room 10, and you can choose to go in any 3 directions. Where would you like to go?")
+    print()
+    print('The door vanishes behind you')
+    print()
+    print('-----To your right is the door to room 8-----')
+    print()
+    print('-----Ahead of you is the door to room 14-----')
+    print()
+    print('-----To your left is the door to room 9-----')
+    user_input = ""
+    while user_input not in directions:
+        print("Options: left/right/forward")
+        user_input = input()
+        if user_input == "left":
+            enter_room_nine()
+        elif user_input == "right":
+            enter_room_eight()
+        elif user_input == "forward":
+            enter_room_fourteen()
+        else: 
+            print("Invalid option, Please enter a valid option.")
+
+def enter_room_four():
+    '''All that happens in room 4'''
+    directions = ["left","right","forward"]
+    print('ENTER--ROOM 4')
+    print("You are in room 4, and you can choose to go in any 3 directions. Where would you like to go?")
+    print()
+    print('The door vanishes behind you')
+    print()
+    print('-----To your right is the door to room 5-----')
+    print()
+    print('-----Ahead of you is the door to room 10-----')
+    print()
+    print('-----To your left is the door to room 6-----')
+    user_input = ""
+    while user_input not in directions:
+        print("Options: left/right/forward")
+        user_input = input()
+        if user_input == "left":
+            enter_room_six()
+        elif user_input == "right":
+            enter_room_five()
+        elif user_input == "forward":
+            enter_room_ten()
+        else: 
+            print("Invalid option, Please enter a valid option.")
+
+
+def enter_room_one():
+    '''All that happens in room 1'''
+    options = ["left","right"]
+    print('ENTER--ROOM 1')
+    print('The door behind you vanishes')
+    print("You are in room 1, and there are 2 doors.")
+    print('Which door do you go through?')
+    user_input = ""
+    while user_input not in options:
+        print("Options: left/right")
+        user_input = input()
+        if user_input == "left":
+            enter_room_five()
+        elif user_input == "right":
+            print('You open the door and are greeted with the light of the outside')
+            print('Congratulations, You are now a Dungeon Conqueror')
+            print('You have escaped from the dungeon')
+            print('From today, you shall be known as, '+name+', The Chaos Conqueror')
+            print('------GG------')
+            sys.exit()
+        else: 
+            print("Invalid option, Please enter a valid option.")
+      
+def startScene():
+    '''Creates the starting scene of the game'''
+    directions = ["left","right","forward","backward"]
+    print('ENTER--ROOM 0')
+    print("You are in room 0, and you can choose to go in any 4 directions. Where would you like to go?")
+    print()
+    print('-----To your left is the door to room 3-----')
+    print()
+    print('-----To your right is the door to room 1-----')
+    print()
+    print('-----Ahead of you is the door to room 4-----')
+    print()
+    print('-----Behind you is the door to room 2 or is it?-----')
+    user_input = ""
+    while user_input not in directions:
+        print("Options: left/right/backward/forward")
+        user_input = input()
+        if user_input == "left":
+            enter_room_three()
+        elif user_input == "right":
+            enter_room_one()
+        elif user_input == "forward":
+            enter_room_four()
+        elif user_input == "backward":
+            print("You find that this door takes you to the same room you just left.")
+        else: 
+            print("Invalid option, Please enter a valid option.")
+
+
+if __name__ == "__main__":
+    while True:
+        print("Welcome to the Dungeon Of Chaos!")
+        print()
+        print("As a new adventurer, you have chosen to conquer a dungeon.")
+        print("It is recommended to go with a party, but you chose to go alone.")
+        print("Not very smart...")
+        print("Anywho, to conquer the dungeon of Chaos, You now need to find a way out.")
+        print("Let's start with your name: ")
+        name = input()
+        print("Good luck, " +name+ ".")
+        startScene()
+    
+
+
+    
+
